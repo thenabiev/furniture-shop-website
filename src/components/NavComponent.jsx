@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { HiOutlineSearch } from 'react-icons/hi';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { search, setSearchTerm } from '../state/shopSlice';
@@ -64,7 +65,8 @@ function NavComponent() {
               <Offcanvas.Body>
               <Form 
               onSubmit={handleSearch}
-              className="d-flex justify-content-end flex-grow-1 ">
+
+              className="d-flex justify-content-end flex-grow-1 searchForm">
                   <InputGroup>
                   <Form.Control
                     onChange={(e)=>setTerm(e.target.value)}
@@ -76,7 +78,10 @@ function NavComponent() {
                   />
                   <Button 
                   type='submit'
-                  variant="outline-dark">Search</Button>
+                  variant="outline-dark"
+                  className='px-4'>
+                    <HiOutlineSearch size={'1.2em'} />
+                  </Button>
                   </InputGroup>
                 </Form>
                 <Nav className="justify-content-end   ps-3">

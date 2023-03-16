@@ -7,6 +7,8 @@ import ShopItem from '../components/ShopItem';
 
 
 
+
+
 const Shop = () => {
 
     useEffect(()=>{

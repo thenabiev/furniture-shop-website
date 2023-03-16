@@ -4,15 +4,10 @@ import { Link } from 'react-router-dom';
 import mainr from '../assets/helperImg/mainr.png'
 import Counter from '../components/Counter';
 
+
+
+
 const Main = () => {
-    const [reveal, setReveal]=useState(false)
-    
-       useEffect(()=>{
-        setTimeout(()=>{
-            setReveal(true)
-        }, 100)
-    
-       })
         
        useEffect(()=>{
         window.scrollTo(0,0)
@@ -21,8 +16,8 @@ const Main = () => {
   return (
     <Container className='main '>
         <Row xs={1} md={1} lg={2} className='g-5 w-100'>
-            <Col className={`mainTexts ${reveal && 'reveal'}`}>
-                <div className="textContent">
+            <Col className='mainTexts'>
+                <div className="textContent slide-right">
                 Hey!
                 <p>Welcome to <br />
                     <span className='text-warning'>Sakura</span> Home !</p>
@@ -39,7 +34,7 @@ const Main = () => {
                 </div>
 
             </Col>
-            <Col  className={`mainImg ${reveal && 'reveal'}`}>
+            <Col  className='mainImg'>
                 <div className="imgBox ">
                     <img src={mainr} />
                 </div>

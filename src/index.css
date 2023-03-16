@@ -6,6 +6,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+::-webkit-scrollbar{
+  width: 7px;
+  background-color: #999;
+
+}
+::-webkit-scrollbar-thumb{
+  background-color: #ffc107;
+  width: 100%;
+}
 ::selection{
   background-color: #ffc107;
   color: #131313;
@@ -34,7 +43,15 @@ a, .routerLink, a:hover, .routerLink:hover{
   letter-spacing: 2px;
   line-height: 52px;
 }
+.searchForm .form-control{
+  border-bottom-left-radius: 50px;
+  border-top-left-radius: 50px;
 
+}
+.searchForm .btn{
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+}
 .mainImg{
   width: 100%;
   height: 100%;
@@ -52,15 +69,7 @@ a, .routerLink, a:hover, .routerLink:hover{
   width: 100%;
 }
 
-.mainImg, .mainTexts, .itemCard{
-  opacity: 0;
-  transform: translateY(100px);
-  transition: .8s;
-}
-.mainImg.reveal, .mainTexts.reveal, .itemCard.reveal{
-  opacity: 1;
-  transform: translateY(0);
-}
+
 
 /* ShopItems */
 .itemCard{
@@ -160,3 +169,4 @@ a, .routerLink, a:hover, .routerLink:hover{
   height: 100%;
   object-fit: contain;
 }
+

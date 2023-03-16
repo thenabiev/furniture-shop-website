@@ -35,7 +35,7 @@ const ShopItem = ({item, setToast}) => {
   return (
     <Col >
         <div  
-        className={`itemCard shadow ${reveal && 'reveal'}`}>
+        className='itemCard shadow'>
             <div 
             onClick={()=>navigate(`details/${id}`)}
             className="cardImg">

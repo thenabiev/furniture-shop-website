@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import About from "./components/About";
 import NavComponent from "./components/NavComponent";
 import Cart from "./pages/Cart";
 import Details from "./pages/Details";
@@ -16,7 +17,7 @@ function App() {
         <Route path="/shop" element={<Shop />}/>
         <Route path="/cart" element={<Cart />}/>
         <Route path='/shop/details/:itemId' element={<Details />} />
-
+        <Route path="/about" element={<About />}/>
       </Routes>
       </div>
     </div>

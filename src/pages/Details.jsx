@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Modal, Row } from 'react-bootstrap';
+import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
@@ -10,13 +11,17 @@ const Details = () => {
   const shopItems=useSelector(state=>state.shop.shop)
   const {itemId}=useParams();
 
+
   const item=shopItems.find(x=>x.id===parseInt(itemId))
 
   const [show, setShow]=useState(false);
 
   const navigate=useNavigate();
 
-  const dispatch=useDispatch()
+  const dispatch=useDispatch();
+  
+
+
   const handleAdd=()=>{
     dispatch(addToCart(item));
     toast(item.title + "  successfully added to cart",{
@@ -72,8 +77,7 @@ const Details = () => {
             </Col>
         </Row>
 
-
-
+        
         <ToastContainer />
     </Container>
   )
