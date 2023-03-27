@@ -12,7 +12,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Card } from 'react-bootstrap';
 
-import { EffectCoverflow, Pagination } from "swiper";
+import { EffectCoverflow, Pagination, Autoplay } from "swiper";
 
 
 const SwiperComponent = () => {
@@ -22,10 +22,13 @@ const SwiperComponent = () => {
             <span className='text-warning'>T</span>estimonials
         </h2>
         <Swiper
-      autoplay
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
       loop
       spaceBetween={20}
-    slidesPerView={2}
+      slidesPerView={2}
 
       effect={"coverflow"}
         grabCursor={true}
@@ -38,8 +41,7 @@ const SwiperComponent = () => {
           modifier: 1,
           slideShadows: true,
         }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
+        modules={[EffectCoverflow, Pagination, Autoplay]}
     >
       <SwiperSlide >
         <Card >
