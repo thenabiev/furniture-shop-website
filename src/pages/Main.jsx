@@ -3,7 +3,8 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import mainr from '../assets/helperImg/mainr.png'
 import Counter from '../components/Counter';
-
+import Banner1 from '../components/Banner1';
+import SwiperComponent from '../components/Swiper'
 
 
 
@@ -42,6 +43,10 @@ const Main = () => {
         </Row>
         <br /><br /><br />
         <Counter />
+        <br />
+        
+        <Banner1 />
+        <SwiperComponent />
     </Container>
   )
 }

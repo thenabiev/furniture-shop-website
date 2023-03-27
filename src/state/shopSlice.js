@@ -71,8 +71,11 @@ export const shopSlice=createSlice({
         setSearchTerm(state, action){
             state.searchTerm=action.payload
         },
+        clearCart(state){
+            state.cartItems=[];
+        }
     }
 })
 
 export default shopSlice.reducer;
-export const { addToCart, removeFromCart, increase, decrease, setSearchTerm}=shopSlice.actions;
+export const { addToCart, removeFromCart, increase, decrease, setSearchTerm, clearCart}=shopSlice.actions;

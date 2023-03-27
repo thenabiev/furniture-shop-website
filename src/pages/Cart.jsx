@@ -1,14 +1,55 @@
-import React, { useEffect } from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Card, Col, Container, Form, Modal, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { HiOutlinePlus, HiOutlineMinus, HiOutlineTrash, HiChevronDoubleRight } from 'react-icons/hi';
-import { removeFromCart, increase, decrease } from '../state/shopSlice';
+import { removeFromCart, increase, decrease, clearCart } from '../state/shopSlice';
 import { Link } from 'react-router-dom';
 
 
 const Cart = () => {
 
-const cartItems=useSelector(state=>state.shop.cartItems);
+    const cartItems=useSelector(state=>state.shop.cartItems);
+
+    // Checkout form
+    const [name, setName]=useState('');
+    const [email, setEmail]=useState('');
+    const [adress, setAdress]=useState('');
+    const [bank, setBank]=useState('');
+    const [exp, setExp]=useState('');
+    const [cvv, setCvv]=useState('');
+
+    const [confirm, setConfirm]=useState(false)
+
+    const handlePay=(e)=>{
+        e.preventDefault();
+        if(parseInt(bank)>0 && bank.length==16){
+            setConfirm(true)
+        }else{  
+            alert("Invalid Bank Card Number")
+        }
+        if(confirm){
+            
+            dispatch(clearCart())
+            setShow(false)
+        setAdress('')
+        setName('')
+        setBank(null)
+        setCvv('')
+        setEmail('')
+        setExp('')
+        alert(`
+                ${name}, your kargo will arrive ${adress} location about few days.
+                Check ${email} adress for more details
+             `)
+        }
+        
+    }
+
+
+    // ###############################################################
+    // ###############################################################
+const [show, setShow]=useState(false);
+
 useEffect(()=>{
     window.scrollTo(0,0)
 },[])
@@ -30,7 +71,9 @@ const dispatch=useDispatch();
             <p>Total Cost : <b>{itemsPrice.toFixed(2)}</b></p>
             </Col>
             <Col className='text-end'>
-                <div className="btn btn-dark me-2">Checkout</div>
+                <div 
+                onClick={()=>setShow(true)}
+                className="btn btn-dark me-2">Checkout</div>
                 <div className="btn btn-outline-dark ">Clear Cart</div>
             </Col>
         </Row>
@@ -93,6 +136,79 @@ const dispatch=useDispatch();
         </Row>
             )
         }
+
+
+    <Modal
+        onHide={()=>setShow(false)}
+        className='modal-lg'
+        show={show}
+        style={{ display: 'block', position: 'fixed' }}      
+        >
+        <Modal.Header closeButton>
+            <h5>
+            Checkout
+            </h5>
+        </Modal.Header>
+        <Modal.Body className=''>
+            <p>Total items in cart : <b>{itemsInCart}</b></p>
+            <p>Total Cost : <b>{itemsPrice.toFixed(2)}</b> AZN</p>
+            <Form
+            onSubmit={handlePay}
+            >
+                <input 
+                value={name}
+                onChange={(e)=>setName(e.target.value)}
+                required
+                type='text'
+                placeholder='Name...'
+                className="form-control mb-2"/>
+                <input 
+                value={email}
+                onChange={(e)=>setEmail(e.target.value)}
+                required
+                type='email'
+                placeholder='E-mail...'
+                className="form-control mb-2"/>
+                <input 
+                onChange={(e)=>setAdress(e.target.value)}
+                value={adress}
+                required
+                placeholder='Adress...'
+                className="form-control mb-2"/>
+                <input 
+                value={bank}
+                onChange={(e)=>setBank(e.target.value)}
+                required
+                type='number'
+                placeholder='Bank card...'
+                className="form-control mb-2"/>
+                <Row xs={1} md={2} className='g-1'>
+                    <Col>
+                    <input
+                    value={exp} 
+                    onChange={(e)=>setExp(e.target.value)}
+                    required
+                    type='number'
+                    placeholder='EXP'
+                    className="form-control mb-2"/>
+                    </Col>
+                    <Col>
+                    <input 
+                    value={cvv}
+                    onChange={(e)=>setCvv(e.target.value)}
+                    required
+                    type='number'
+                    placeholder='CVV'
+                    className="form-control mb-2"/>
+                    </Col>
+
+                </Row>
+                <button 
+                className='btn btn-dark float-end px-5'
+                type='submit'>Pay</button>
+            </Form>
+        </Modal.Body>
+    </Modal>
         
     </Container>
   )

@@ -170,3 +170,34 @@ a, .routerLink, a:hover, .routerLink:hover{
   object-fit: contain;
 }
 
+.banner1{
+}
+.banner1 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.avatar{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: auto;
+  text-align: center;
+  box-shadow: 5px 5px 20px rgba(0,0,0, .4);
+}
+.avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width:992px){
+  .itemBanner .bannerText{
+    display: none;
+  }
+  .textContent{
+    transform: translateY(0);
+  }
+}
