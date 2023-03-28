@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import About from "./components/About";
+import Footer from "./components/Footer";
 import NavComponent from "./components/NavComponent";
 import Cart from "./pages/Cart";
 import Details from "./pages/Details";
@@ -20,6 +21,7 @@ function App() {
         <Route path="/about" element={<About />}/>
       </Routes>
       </div>
+      <Footer />
     </div>
   );
 }
