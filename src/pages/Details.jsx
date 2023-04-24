@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import { addToCart } from '../state/shopSlice';
+import Swiper from 'swiper';
+import { SwiperSlide } from 'swiper/react';
 
 const Details = () => {
 
@@ -73,7 +75,38 @@ const Details = () => {
                         <div 
                         onClick={handleAdd}        
                         className="btn btn-dark">Add To Cart</div>
+                        
                     </div>
+
+                    {/* <Swiper
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                      }}
+                      loop
+                      spaceBetween={20}
+                      slidesPerView={2}
+                
+                      effect={"coverflow"}
+                        grabCursor={true}
+                        centeredSlides={true}
+                
+                        coverflowEffect={{
+                          rotate: 50,
+                          stretch: 0,
+                          depth: 100,
+                          modifier: 1,
+                          slideShadows: true,
+                        }}
+                    >
+                        <SwiperSlide>
+                            {
+                                item.comments.map(cmnt=>(
+                                    <>{cmnt.name}</>
+                                ))
+                            }
+                        </SwiperSlide>
+                    </Swiper> */}
             </Col>
         </Row>
 

@@ -32,6 +32,13 @@ const Shop = () => {
 
   return (
     <Container>
+        {
+            filteredList.length!=shopItems.length && (
+                <p>
+                    <b>{filteredList.length} </b>
+                     item{filteredList.length>1 && "s"} found</p>
+            )
+        }
         <Row xs={1} md={2} lg={3} className='g-4'>
             {
                 filteredList.length>0 ? (

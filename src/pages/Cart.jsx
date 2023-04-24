@@ -74,7 +74,9 @@ const dispatch=useDispatch();
                 <div 
                 onClick={()=>setShow(true)}
                 className="btn btn-dark me-2">Checkout</div>
-                <div className="btn btn-outline-dark ">Clear Cart</div>
+                <div 
+                onClick={()=>dispatch(clearCart())}
+                className="btn btn-outline-dark ">Clear Cart</div>
             </Col>
         </Row>
             ) : (

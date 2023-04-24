@@ -59,7 +59,10 @@ function NavComponent() {
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Offcanvas
+                <h2
+                className='logo'
+                style={{fontSize:"24px"}  }
+                >Sakura<span className='text-warning'>Home</span></h2>
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
