@@ -5,6 +5,7 @@ import mainr from '../assets/helperImg/mainr.png'
 import Counter from '../components/Counter';
 import Banner1 from '../components/Banner1';
 import SwiperComponent from '../components/Swiper'
+import {FaFacebookF, FaTwitter, FaYoutube} from 'react-icons/fa'
 
 
 
@@ -31,6 +32,17 @@ const Main = () => {
                     <Link to='/shop' className="btn btn-dark px-5 curved1">
                         Shop Now
                     </Link>
+                </div>
+                <div className="socials d-flex my-5 position-relative gap-3">
+                    <a href="#" className='text-dark'>
+                        <FaFacebookF size={22.4} />
+                    </a>
+                    <a href="#" className='text-dark'>
+                        <FaTwitter size={22.4} />
+                    </a>
+                    <a href="#" className='text-dark'>
+                        <FaYoutube size={22.4} />
+                    </a>
                 </div>
                 </div>
 

@@ -7,6 +7,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import { addToCart } from '../state/shopSlice';
 import Swiper from 'swiper';
 import { SwiperSlide } from 'swiper/react';
+import DetailsSwiper from '../components/DetailsSwiper';
 
 const Details = () => {
 
@@ -78,35 +79,7 @@ const Details = () => {
                         
                     </div>
 
-                    {/* <Swiper
-                    autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
-                      }}
-                      loop
-                      spaceBetween={20}
-                      slidesPerView={2}
-                
-                      effect={"coverflow"}
-                        grabCursor={true}
-                        centeredSlides={true}
-                
-                        coverflowEffect={{
-                          rotate: 50,
-                          stretch: 0,
-                          depth: 100,
-                          modifier: 1,
-                          slideShadows: true,
-                        }}
-                    >
-                        <SwiperSlide>
-                            {
-                                item.comments.map(cmnt=>(
-                                    <>{cmnt.name}</>
-                                ))
-                            }
-                        </SwiperSlide>
-                    </Swiper> */}
+                    <DetailsSwiper comments={item.comments} />
             </Col>
         </Row>
 

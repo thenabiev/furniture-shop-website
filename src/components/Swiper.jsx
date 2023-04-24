@@ -30,9 +30,9 @@ const SwiperComponent = () => {
       spaceBetween={20}
       slidesPerView={2}
 
-      effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
+        effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
 
         coverflowEffect={{
           rotate: 50,

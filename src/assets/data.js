@@ -136,7 +136,7 @@ export const data=[
             },
             {
                 id:4,
-                name: 'Teymur Durden',
+                name: 'Taryel Durden',
                 comment:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ducimus.'
             },
         ]
@@ -297,7 +297,7 @@ export const data=[
             },
             {
                 id:4,
-                name: 'Teymur Durden',
+                name: 'Taryel Durden',
                 comment:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ducimus.'
             },
         ]
