@@ -38,7 +38,11 @@ const DetailsSwiper = ({comments}) => {
               <Card className='text-center'>
               <Card.Body>
                 <h5>{cmnt.name}</h5>
-                <p>{cmnt.comment}</p>
+                <p>
+                  <em>
+                  "{cmnt.comment}"
+                  </em>
+                </p>
               </Card.Body>
             </Card>
             </SwiperSlide>
