@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="bg-dark position-relative">
       <div className="container text-light py-4">
-        <Row xs={1} sm={2} md={3} lg={4} className="gap-4">
+        <Row xs={1} sm={2}  lg={3} >
           <Col>
             <h2 className="logo" style={{ fontSize: "32px" }}>
               Sakura<span className="text-warning">Home</span>
@@ -54,12 +54,15 @@ const Footer = () => {
                   Call center
                 </a>
               </li>
+              <li>
+                <a href="#" className="text-light">
+                  Contact
+                </a>
+              </li>
             </ul>
           </Col>
 
-          <Col>
-            <h6>Contact</h6>
-          </Col>
+          
         </Row>
       </div>
     </div>

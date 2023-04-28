@@ -35,7 +35,7 @@ const Main = () => {
                 Shop Now
               </Link>
             </div>
-            <div className="socials d-flex my-5 position-relative gap-3">
+            <div className="socials d-inline-flex my-5 position-relative gap-3">
               <a href="#" className="text-dark">
                 <FaFacebookF size={22.4} />
               </a>

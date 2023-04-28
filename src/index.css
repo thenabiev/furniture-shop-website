@@ -16,13 +16,58 @@ body {
   position: absolute;
   background: #000;
   content: '';
-  left:20%;
+  left:100%;
+  margin-left: 1em;
   top: 50%;
   transform: translateY(-50%);
   transition: .6s;
 }
 .socials:hover::after{
   width: 240px;
+}
+.aboutBanner{ 
+  background: url('../src/assets/helperImg/aboutBanner.jpg') no-repeat fixed;
+  background-position: bottom;
+  position: relative;
+  max-height: 100%;
+}
+.aboutBanner .layer{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.6);
+  place-items: center;
+}
+del{
+  position: relative;
+  transition: all .3s;
+}
+del:hover::after ,
+del:hover::before{
+  transform: translate(-50%, -50%) rotate(0);
+
+}
+del::after{
+  width: 100%;
+  height: 1.5px;
+  transition: all .2s;
+  content: '';
+  background-color: crimson;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+}
+del::before{
+  width: 100%;
+  transition: all .2s;
+  height: 1.5px;
+  content: '';
+  background-color: crimson;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(30deg);
 }
 
 ::-webkit-scrollbar{

@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <NavComponent />
-      <div className="my-5 py-5">
+      <div className="my-5 py-5 min-vh-100">
       <Routes>
         <Route path="/" element={<Main />}/>
         <Route path="/shop" element={<Shop />}/>

@@ -45,6 +45,7 @@ const Cart = () => {
       setEmail("");
       setExp("");
       alert(`
+                Payment is successful !
                 ${name}, your kargo will arrive ${adress} location about few days.
                 Check ${email} adress for more details
              `);
